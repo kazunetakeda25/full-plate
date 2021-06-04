@@ -28,9 +28,13 @@ const PlateComponent = {
     this.rayOrigin = new THREE.Vector2(0, 0);
     this.cursorLocation = new THREE.Vector3(0, 0, 0);
 
-    if (scene.hasLoaded) {//this.onLoadComplete()
+    if (scene.hasLoaded) {
+      //this.onLoadComplete()
+      console.log("scene has loaded");
     } else {
-      scene.addEventListener('loaded', () => {//this.onLoadComplete()
+      scene.addEventListener('loaded', () => {
+        //this.onLoadComplete()
+        console.log("scene load complete");
       });
     }
   },

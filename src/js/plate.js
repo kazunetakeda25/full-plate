@@ -12,9 +12,11 @@ const PlateComponent = {
 
         if (scene.hasLoaded) {
             //this.onLoadComplete()
+            console.log("scene has loaded");
         } else {
             scene.addEventListener('loaded', () => {
                 //this.onLoadComplete()
+                console.log("scene load complete")
             })
         }
     },
