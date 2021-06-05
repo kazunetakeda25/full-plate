@@ -54,40 +54,52 @@
             style="display:none;visibility:hidden"></iframe>
     </noscript>
 
+    <div><span class="menu" onclick="toggleMenu()"><i class="ion-ios-paper-outline"></i></span></div>
+
     <div class="app">
-        <aside class="sidebar open">
+        <aside class="sidebar close">
             <header>
                 <img src="resources/images/logo.png">
             </header>
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="#"><i class="ion-pizza"></i> <span>Meal Category #1</span></a>
+                        <a class="item noselect"><i class="ion-pizza"></i> <span>Meal Category #1</span></a>
                         <ul class="nav-flyout">
                             <li>
-                                <a href="#"><i class="ion-ios-circle-filled"></i>Meal #1</a>
+                                <a class="menu-item noselect" menu-id="1"><i class="ion-ios-circle-filled"></i>Meal
+                                    #1</a>
                             </li>
                             <li>
-                                <a href="#"><i class="ion-ios-circle-filled"></i>Meal #2</a>
+                                <a class="menu-item noselect" menu-id="2"><i class="ion-ios-circle-filled"></i>Meal
+                                    #2</a>
                             </li>
                             <li>
-                                <a href="#"><i class="ion-ios-circle-filled"></i>Meal #3</a>
+                                <a class="menu-item noselect" menu-id="3"><i class="ion-ios-circle-filled"></i>Meal
+                                    #3</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="ion-coffee"></i> <span class="">Meal Category #2</span></a>
+                        <a class="item noselect"><i class="ion-coffee"></i> <span class="">Meal Category #2</span></a>
                         <ul class="nav-flyout">
                             <li>
-                                <a href="#"><i class="ion-ios-circle-filled"></i>Meal #1</a>
+                                <a class="menu-item noselect" menu-id="4"><i class="ion-ios-circle-filled"></i>Meal
+                                    #1</a>
                             </li>
                             <li>
-                                <a href="#"><i class="ion-ios-circle-filled"></i>Meal #2</a>
+                                <a class="menu-item noselect" menu-id="5"><i class="ion-ios-circle-filled"></i>Meal
+                                    #2</a>
                             </li>
                             <li>
-                                <a href="#"><i class="ion-ios-circle-filled"></i>Meal #2</a>
+                                <a class="menu-item noselect" menu-id="6"><i class="ion-ios-circle-filled"></i>Meal
+                                    #3</a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a onclick="closeMenu()" class="noselect"><i class="ion-ios-undo"></i> <span
+                                class="">Back</span></a>
                     </li>
                 </ul>
             </nav>
@@ -98,10 +110,11 @@
         renderer="colorManagement: true" xrweb>
 
         <a-assets>
+            <img id="reticle" src="../resources/images/reticle.png">
             <img id="reticleLoading" src="../resources/images/reticle-scanning.png">
         </a-assets>
 
-        <a-camera id="camera" position="0 8 0">
+        <a-camera id="camera" position="0 8 0" raycaster="objects: .cantap" cursor="fuse: false; rayOrigin: mouse;">
         </a-camera>
 
         <a-image id="cursor" plate rotation="-90 0 0" plate scale="3 3 3" src="#reticleLoading" transparent="true">
@@ -123,7 +136,7 @@
         <a-light type="ambient" intensity="0.5"></a-light>
 
         <a-box id="ground" scale="1000 2 1000" position="0 -1 0"
-            material="shader: shadow; transparent: true; opacity: 0" shadow></a-box>
+            material="shader: shadow;" shadow></a-box>
 
     </a-scene>
 

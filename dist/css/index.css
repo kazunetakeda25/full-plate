@@ -11,18 +11,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background-color: #fefefe; }
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
 a {
-  text-decoration: none;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  transition: all 0.6s ease; }
+  text-decoration: none; }
 
-a:hover {
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  transition: all 0.6s ease; }
+.menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+  background-color: #E75F74;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .menu i {
+    font-size: 24px;
+    color: white; }
 
 .app {
   position: absolute;
@@ -32,12 +40,9 @@ a:hover {
   bottom: 0;
   z-index: 10; }
 
-/* -------------
-Sidebar
-----------------*/
 .sidebar {
   position: absolute;
-  width: 17em;
+  width: 70vw;
   height: 100%;
   top: 0;
   overflow: hidden;
@@ -65,12 +70,13 @@ Sidebar
   background-color: #E75F74;
   width: 100%;
   display: block;
-  padding: 0.75em 1em;
-  color: white; }
+  color: white;
+  text-align: center;
+  padding: 10px 0px; }
+  .sidebar header img {
+    width: 60%;
+    height: auto; }
 
-/* -------------
-Sidebar Nav
-----------------*/
 .sidebar-nav {
   position: fixed;
   background-color: #19222a;
@@ -81,44 +87,29 @@ Sidebar Nav
   padding-bottom: 6em;
   z-index: 9;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  /* -------------
-  Chev elements
-  ----------------*/
-  /* -------------
-  Nav-Flyout
-  ----------------*/
-  /* -------------
-  Hover
-  ----------------*/ }
+  -webkit-overflow-scrolling: touch; }
 
 .sidebar-nav ul {
-  list-style: none;
-  display: block;
+  height: 100%;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  list-style: none; }
 
 .sidebar-nav ul li {
   margin-left: 0;
   padding-left: 0;
   display: inline-block;
-  width: 100%;
-  /* -------------
-  Sidebar     : icons
-  ----------------*/ }
+  width: 100%; }
 
 .sidebar-nav ul li a {
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   font-size: 0.75em;
   padding: 1.05em 1em;
   position: relative;
   display: block; }
 
 .sidebar-nav ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  transition: all 0.6s ease; }
+  color: #E75F74; }
 
 .sidebar-nav ul li i {
   font-size: 1.8em;
@@ -127,7 +118,7 @@ Sidebar Nav
   display: inline;
   vertical-align: middle; }
 
-.sidebar-nav > ul > li > a:after {
+.sidebar-nav > ul > li > a.item:after {
   content: '\f125';
   font-family: ionicons;
   font-size: 0.5em;
@@ -136,6 +127,14 @@ Sidebar Nav
   position: absolute;
   right: 0.75em;
   top: 45%; }
+
+@keyframes delay-pointer-events {
+  0% {
+    visibility: hidden; }
+  50% {
+    visibility: visible; }
+  100% {
+    visibility: visible; } }
 
 .sidebar-nav .nav-flyout {
   position: absolute;
@@ -151,10 +150,11 @@ Sidebar Nav
   transform: translateX(100%);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  visibility: hidden; }
 
 .sidebar-nav .nav-flyout a:hover {
-  background-color: rgba(255, 255, 255, 0.05); }
+  background-color: rgba(255, 255, 255, 0); }
 
 .sidebar-nav ul > li:hover .nav-flyout {
   -webkit-transform: translateX(0);
@@ -164,7 +164,9 @@ Sidebar Nav
   transform: translateX(0);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  animation: delay-pointer-events 500ms linear;
+  visibility: visible; }
 
 .noselect {
   -webkit-touch-callout: none;
