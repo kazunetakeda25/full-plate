@@ -2,12 +2,11 @@
 <html class="a-fullscreen">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Full Plate</title>
-    <meta aframe-injected="" name="viewport"
+    <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover">
-    <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
-    <meta aframe-injected="" name="theme-color" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -24,23 +23,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5NBG6LB');
-    </script>
-    <script>
-        //force https, 8th wall wont work without it!
         if (location.protocol !== 'https:') {
             location.replace(`https:${location.href.substring(location.protocol.length)}`);
         }
@@ -48,63 +30,56 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NBG6LB" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-    </noscript>
 
     <div><span class="menu" onclick="toggleMenu()"><i class="ion-ios-paper-outline"></i></span></div>
 
-    <div class="app">
-        <aside class="sidebar close">
-            <header>
-                <img src="resources/images/logo.png">
-            </header>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li>
-                        <a class="item noselect"><i class="ion-pizza"></i> <span>Meal Category #1</span></a>
-                        <ul class="nav-flyout">
-                            <li>
-                                <a class="menu-item noselect" menu-id="1"><i class="ion-ios-circle-filled"></i>Meal
-                                    #1</a>
-                            </li>
-                            <li>
-                                <a class="menu-item noselect" menu-id="2"><i class="ion-ios-circle-filled"></i>Meal
-                                    #2</a>
-                            </li>
-                            <li>
-                                <a class="menu-item noselect" menu-id="3"><i class="ion-ios-circle-filled"></i>Meal
-                                    #3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="item noselect"><i class="ion-coffee"></i> <span class="">Meal Category #2</span></a>
-                        <ul class="nav-flyout">
-                            <li>
-                                <a class="menu-item noselect" menu-id="4"><i class="ion-ios-circle-filled"></i>Meal
-                                    #1</a>
-                            </li>
-                            <li>
-                                <a class="menu-item noselect" menu-id="5"><i class="ion-ios-circle-filled"></i>Meal
-                                    #2</a>
-                            </li>
-                            <li>
-                                <a class="menu-item noselect" menu-id="6"><i class="ion-ios-circle-filled"></i>Meal
-                                    #3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a onclick="closeMenu()" class="noselect"><i class="ion-ios-undo"></i> <span
-                                class="">Back</span></a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-    </div>
+    <aside class="sidebar close">
+        <header>
+            <img src="resources/images/logo.png">
+        </header>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a class="item noselect"><i class="ion-pizza"></i> <span>Meal Category #1</span></a>
+                    <ul class="nav-flyout">
+                        <li>
+                            <a class="menu-item noselect" menu-id="1"><i class="ion-ios-circle-filled"></i>Meal
+                                #1</a>
+                        </li>
+                        <li>
+                            <a class="menu-item noselect" menu-id="2"><i class="ion-ios-circle-filled"></i>Meal
+                                #2</a>
+                        </li>
+                        <li>
+                            <a class="menu-item noselect" menu-id="3"><i class="ion-ios-circle-filled"></i>Meal
+                                #3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="item noselect"><i class="ion-coffee"></i> <span class="">Meal Category #2</span></a>
+                    <ul class="nav-flyout">
+                        <li>
+                            <a class="menu-item noselect" menu-id="4"><i class="ion-ios-circle-filled"></i>Meal
+                                #1</a>
+                        </li>
+                        <li>
+                            <a class="menu-item noselect" menu-id="5"><i class="ion-ios-circle-filled"></i>Meal
+                                #2</a>
+                        </li>
+                        <li>
+                            <a class="menu-item noselect" menu-id="6"><i class="ion-ios-circle-filled"></i>Meal
+                                #3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a onclick="closeMenu()" class="noselect"><i class="ion-ios-undo"></i> <span
+                            class="">Back</span></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
     <a-scene xrextras-gesture-detector xrextras-almost-there xrextras-loading xrextras-runtime-error
         renderer="colorManagement: true" xrweb>

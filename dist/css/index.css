@@ -22,7 +22,7 @@ a {
   top: 20px;
   width: 40px;
   height: 40px;
-  z-index: 100;
+  z-index: 10;
   background-color: #E75F74;
   border-radius: 10px;
   display: flex;
@@ -32,21 +32,14 @@ a {
     font-size: 24px;
     color: white; }
 
-.app {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 10; }
-
 .sidebar {
   position: absolute;
   width: 70vw;
   height: 100%;
   top: 0;
   overflow: hidden;
-  background-color: #19222a; }
+  background-color: #19222a;
+  z-index: 10; }
   .sidebar.open {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
