@@ -42,7 +42,9 @@ const PlateComponent = {
     },
 
     placeMeal(id) {
-        this.cursor.setAttribute('visible', false);
+
+        this.cursor.setAttribute('visible', true);
+        this.cursor.setAttribute('src', '#reticleLoading');
 
         const sidebar = document.querySelector('.sidebar');
         sidebar.classList.remove('open');
@@ -57,7 +59,7 @@ const PlateComponent = {
         newMeal.setAttribute('id', 'plateSpawned');
         newMeal.setAttribute('position', this.el.object3D.position);
         newMeal.setAttribute('rotation', this.el.object3D.rotation);
-        newMeal.setAttribute('scale', '1 1 1');
+        newMeal.setAttribute('scale', '0.25 0.25 0.25');
         newMeal.setAttribute('xrextras-hold-drag', '');
         newMeal.setAttribute('xrextras-two-finger-rotate', '');
         newMeal.classList.add('cantap');
@@ -74,6 +76,8 @@ const PlateComponent = {
                 clampWhenFinished: true
             });
             newMeal.setAttribute('visible', true);
+            this.cursor.setAttribute('visible', false);
+            this.cursor.setAttribute('src', '#reticle');
         });
     }
 }
