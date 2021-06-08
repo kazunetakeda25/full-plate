@@ -59,7 +59,11 @@ const PlateComponent = {
         newMeal.setAttribute('id', 'plateSpawned');
         newMeal.setAttribute('position', this.el.object3D.position);
         newMeal.setAttribute('rotation', this.el.object3D.rotation);
-        newMeal.setAttribute('scale', '0.25 0.25 0.25');
+        if (id == 3) {
+            newMeal.setAttribute('scale', '0.2 0.2 0.2');
+        } else {
+            newMeal.setAttribute('scale', '0.3 0.3 0.3');
+        }
         newMeal.setAttribute('xrextras-hold-drag', '');
         newMeal.setAttribute('xrextras-two-finger-rotate', '');
         newMeal.classList.add('cantap');
